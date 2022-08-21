@@ -30,17 +30,17 @@ while True:
         if coin  ["symbol"] == "ETH":
             file = open("./ETH.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
-        if coin  ["symbol"] == "BTC":
-            file = open("./BYC.txt", "W")
+        if coin  ["symbol"] == "USDT":
+            file = open("./USDT.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n ")
-        if coin  ["symbol"] == "BTC":
-            file = open("./BYC.txt", "W")
+        if coin  ["symbol"] == "USDC":
+            file = open("./USDC.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n ")
-        if coin  ["symbol"] == "BTC":
-            file = open("./BYC.txt", "W")
+        if coin  ["symbol"] == "BNB":
+            file = open("./BNB.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
-        if coin  ["symbol"] == "BTC":
-            file = open("./BYC.txt", "W")
+        if coin  ["symbol"] == "BUSD":
+            file = open("./BUSD.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
 
     print("Datos obtenidos")
