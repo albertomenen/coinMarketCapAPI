@@ -10,7 +10,7 @@ headers = {
 
 parameters = {
     'start':'1',
-    'limit':'10',
+    'limit':'5',
     'convert':'EUR'
 
 }
@@ -19,4 +19,29 @@ url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 json = requests.get(url, params = parameters, headers = headers).json()
 
-print(json)
+coins = json ["data"]
+
+while True:
+    print("Obteniendo datos ")
+    for coin in coins:
+        if coin  ["symbol"] == "BTC":
+            file = open("./BTC.txt", "W")
+            file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
+        if coin  ["symbol"] == "ETH":
+            file = open("./ETH.txt", "W")
+            file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
+        if coin  ["symbol"] == "BTC":
+            file = open("./BYC.txt", "W")
+            file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n ")
+        if coin  ["symbol"] == "BTC":
+            file = open("./BYC.txt", "W")
+            file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n ")
+        if coin  ["symbol"] == "BTC":
+            file = open("./BYC.txt", "W")
+            file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
+        if coin  ["symbol"] == "BTC":
+            file = open("./BYC.txt", "W")
+            file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
+
+    print("Datos obtenidos")
+    time.sleep(60)
