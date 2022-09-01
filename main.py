@@ -2,6 +2,7 @@
 import requests
 ## Ciclo infinito que se ejecuta cada minuto##
 import time 
+from prettytable import PrettyTable
 
 headers = {
     'Accepts': 'application/json',
@@ -42,6 +43,8 @@ while True:
         if coin  ["symbol"] == "BUSD":
             file = open("./BUSD.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
+            
+    print(data.align)
 
     print("Datos obtenidos")
     time.sleep(60)
