@@ -3,6 +3,9 @@ import requests
 ## Ciclo infinito que se ejecuta cada minuto##
 import time 
 
+## Ahora importamos la pretty Table
+import prettytable from PrettyTable
+
 headers = {
     'Accepts': 'application/json',
     'X-CMC_PRO_API_KEY' : 'c4ea79a6-9dd5-4686-acd7-1caf0d73ea65'
@@ -14,6 +17,7 @@ parameters = {
     'convert':'EUR'
 
 }
+
 
 url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
@@ -42,6 +46,12 @@ while True:
         if coin  ["symbol"] == "BUSD":
             file = open("./BUSD.txt", "W")
             file.write(str(round(coin ["quote"]["EUR"]["price"],5) ) + "\n" )
+            
+  table = PrettyTable()
+  table.add_column("BTC")
+  table.add_column("price")
 
+  
+    print("PrettyTable")
     print("Datos obtenidos")
     time.sleep(60)
